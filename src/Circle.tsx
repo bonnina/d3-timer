@@ -16,6 +16,8 @@ class Circle extends React.Component<Props, {}> {
     this.redraw();
   }
 
+  public percentage: number = Math.PI * 2;
+
   public draw() {
     const context = this.setContext();
     this.setBackground(context);
@@ -30,34 +32,52 @@ class Circle extends React.Component<Props, {}> {
 
   public setContext() {
     return d3.select(this.ref).append('svg')
-      .attr('height', '310px')
-      .attr('width', '310px')
+      .attr('height', '380px')
+      .attr('width', '380px')
       .attr('id', 'd3-circle')
       .append('g')
-      .attr('transform', `translate(155, 155)`);
+      .attr('transform', `translate(170, 170)`);
   }
 
   public setBackground(context: any) {
     return context.append('path')
     .datum({ endAngle: this.percentage })
-    .style('fill', '#e6e6e6')   
+    .style('fill', '#f2f2f2')   
     .attr('d', this.circle()); 
   }
 
-  public percentage: number = Math.PI * 2;
-
   public circle() {
     return d3.arc()
-      .innerRadius(100)
-      .outerRadius(110)
+      .innerRadius(140)
+      .outerRadius(152)
       .startAngle(0)
+  }
+
+  public setColor(): string {
+    const { progress } = this.props;
+    switch(true) {
+      case (progress >= 0.95):
+        return '#d279a6';
+
+      case (progress >= 0.75):
+        return '#d98cb3';
+
+      case (progress >= 0.5):
+        return '#df9fbf';
+
+      case (progress >= 0.25):
+        return '#e6b3cc'; 
+
+      default:
+        return '#ecc6d9';
+    }
   }
   
   public setForeground(context: any) {
     const { progress } = this.props;
     return context.append('path')
       .datum({ endAngle: this.percentage * progress })
-      .style('fill', '#ffb3b3')
+      .style('fill', this.setColor())
       .attr('d', this.circle());
   }
 
