@@ -18,13 +18,13 @@ class Circle extends React.Component<Props, {}> {
 
   public percentage: number = Math.PI * 2;
 
-  public draw() {
+  public draw(): void {
     const context = this.setContext();
     this.setBackground(context);
     this.setForeground(context);
   }
 
-  public redraw() {
+  public redraw(): void {
     const context: any = d3.select('#d3-circle');
     context.remove();
     this.draw();

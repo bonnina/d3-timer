@@ -28,7 +28,7 @@ class App extends React.Component<{}, State> {
     this.showTime();
   }
 
-  public showTime() {
+  public showTime(): void {
     const hrs: number = Math.floor(this.state.session / 60);
     const min: number = Math.floor(this.state.session) % 60;
     const sec: number =  Math.floor((this.state.session * 60) % 60);
@@ -48,7 +48,7 @@ class App extends React.Component<{}, State> {
     } else return
   };
 
-  public countdown() {
+  public countdown(): void {
     this.setState({ 
       length: this.state.session * 60
     });
@@ -63,7 +63,7 @@ class App extends React.Component<{}, State> {
     }, 1000);
   };
 
-  public reset() {
+  public reset(): void {
     this.setState({ 
       session: 0.1,
       length: 0,
@@ -71,7 +71,7 @@ class App extends React.Component<{}, State> {
     });
   };
 
-  public wikiRedirect() {
+  public wikiRedirect(): void {
     window.open("https://en.wikipedia.org/wiki/Pomodoro_Technique");
   }
 
