@@ -1,5 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Barrio|Economica');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  text-align: center;
+}
+
+#area {
+  margin: 2vw auto 2vw auto;
+}
+
+h1 {
+  font: 75px 'Barrio',  sans-serif;
+  line-height: 0.8;
+  margin: 50px auto 40px auto;
+}
+
+.controls {
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  font: 30px 'Barrio',  sans-serif;
+  letter-spacing: 5px;
+}
+
+#plus,  #minus {
+  font: 90px 'Economica',  sans-serif;
+  line-height: 0.4;
+}
+
+#start {
+  transform: scale(2.5);
+  line-height: 0.4;
+  margin: auto 10px auto 17px;
+}
+
+#reset, #about {
+  margin: auto 10px;
+  font-weight: bold;
+}
+
+#time {
+  font: 75px 'Economica',  sans-serif;
+  color: #d279a6;
+  line-height: 0.1;
+  margin: 25px auto 35px auto;
 }
