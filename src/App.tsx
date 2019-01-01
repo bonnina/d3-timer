@@ -77,7 +77,8 @@ class App extends React.Component<{}, State> {
 
   public render() {
     return (
-      <div>
+      <div id='area'>
+        <h1> Timer </h1>
         <div className='controls'>
           <button id='start' onClick={this.countdown}> &#8227; </button>
           <button id='reset' onClick={this.reset}> &#10006; </button>
@@ -87,9 +88,9 @@ class App extends React.Component<{}, State> {
         <Circle progress={ 1 - (this.state.length / 60 / this.state.session) } />
 
         <div className='clock'>
-          <button onClick={this.onIncrement}> + </button>
-          <p> {this.state.time} </p>
-          <button onClick={this.onDecrement}> - </button>
+          <button id='plus' onClick={this.onIncrement}> + </button>
+          <p id='time'> {this.state.time} </p>
+          <button id='minus' onClick={this.onDecrement}> - </button>
         </div>
       </div>
     );

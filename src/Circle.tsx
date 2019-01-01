@@ -32,11 +32,11 @@ class Circle extends React.Component<Props, {}> {
 
   public setContext() {
     return d3.select(this.ref).append('svg')
-      .attr('height', '380px')
-      .attr('width', '380px')
+      .attr('height', '350px')
+      .attr('width', '350px')
       .attr('id', 'd3-circle')
       .append('g')
-      .attr('transform', `translate(170, 170)`);
+      .attr('transform', `translate(175, 175)`);
   }
 
   public setBackground(context: any) {
