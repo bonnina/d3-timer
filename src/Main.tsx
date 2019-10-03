@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Circle from './Circle';
 
-interface State {
+interface IState {
   session: number;
-  length: number;
-  time: string;
+  length : number;
+  time   : string;
 }
 
-class App extends React.Component<{}, State> {
+class Main extends React.Component<{}, IState> {
   constructor(props: {}) {
     super(props);
     
@@ -18,10 +18,10 @@ class App extends React.Component<{}, State> {
     this.reset = this.reset.bind(this);
   }
 
-  public state: State = {
+  public state: IState = {
     session: 5,
-    length: 0, 
-    time: ""
+    length : 0, 
+    time   : ""
   };
 
   componentDidMount() {
@@ -32,7 +32,12 @@ class App extends React.Component<{}, State> {
     const hrs: number = Math.floor(this.state.session / 60);
     const min: number = Math.floor(this.state.session) % 60;
     const sec: number =  Math.floor((this.state.session * 60) % 60);
-    const t: string = (hrs > 0 ? hrs + ":" : "00:") + (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+    const t: string = 
+      (hrs > 0 ? hrs + ":" : "00:") 
+      + (min < 10 ? "0" + min : min) 
+      + ":" 
+      + (sec < 10 ? "0" + sec : sec);
+
     this.setState({ time: t });
   };
 
@@ -68,8 +73,9 @@ class App extends React.Component<{}, State> {
   public reset(): void {
     this.setState({ 
       session: 0,
-      length: 0
+      length : 0
     });
+    
     this.showTime();
   };
 
@@ -99,4 +105,4 @@ class App extends React.Component<{}, State> {
   }
 }
 
-export default App;
+export default Main;

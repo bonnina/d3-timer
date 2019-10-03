@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as d3 from "d3";
 
-interface Props {
+interface IProps {
   progress: number;
 }
 
-class Circle extends React.Component<Props, {}> {
+class Circle extends React.Component<IProps, {}> {
   ref: SVGGElement;
 
   componentDidMount() {
