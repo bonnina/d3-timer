@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/d3": "^5.5.0",
-    "d3": "^5.7.0",
+    "d3": "^7.6.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts-ts": "3.1.0"
